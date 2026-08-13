@@ -1,11 +1,14 @@
 # 📸 Captura de Pantalla - Extensión para Brave y Google Chrome
 
-> Extensión de navegador ligera, moderna y potente desarrollada bajo el estándar **Manifest V3**. Permite realizar capturas de páginas completas (con scroll automático y unión de partes) o capturas de áreas personalizadas con el puntero interactivo 👈🏻 y color neón **#ccff00**, guardando todo automáticamente en la carpeta de **Descargas** con nombres basados en la **URL limpia + fecha**.
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Miguel_Freire-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/miguelangelhfreire)
 ![Brave](https://img.shields.io/badge/Brave-Compatible-FB542B?style=for-the-badge&logo=brave&logoColor=white)
 ![Google Chrome](https://img.shields.io/badge/Google_Chrome-Compatible-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
 ![Windows & Mac](https://img.shields.io/badge/OS-Windows%20|%20macOS%20|%20Linux-333333?style=for-the-badge)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-success?style=for-the-badge)
+
+> Extensión de navegador ligera, moderna y potente desarrollada bajo el estándar **Manifest V3**. Permite realizar capturas de páginas completas (con scroll automático y unión de partes) o capturas de áreas personalizadas con el puntero interactivo 👈🏻 y color neón **#ccff00**, guardando todo automáticamente en la carpeta de **Descargas** con nombres basados en la **URL limpia + fecha**.
+
+🔗 **Conecta conmigo en LinkedIn**: [https://www.linkedin.com/in/miguelangelhfreire](https://www.linkedin.com/in/miguelangelhfreire)
 
 ---
 
@@ -103,5 +106,5 @@ extensiones/
 
 ## 👤 Autor
 
-Desarrollado por **Miguel Freire**.
-Proyecto de código abierto listo para publicar y compartir en GitHub.
+Desarrollado por **Miguel Freire**  
+🔗 [LinkedIn: miguelangelhfreire](https://www.linkedin.com/in/miguelangelhfreire)
