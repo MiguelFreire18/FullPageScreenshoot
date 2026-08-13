@@ -1,0 +1,321 @@
+/* Estilos para la Extensión de Capturas de Pantalla - Tema Neon #ccff00 */
+
+/* Contenedor principal del banner superior */
+#screenshot-ext-banner-root {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 2147483645 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  pointer-events: none !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  animation: screenshot-ext-slide-down 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes screenshot-ext-slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes screenshot-ext-fade-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.screenshot-ext-banner-bar {
+  pointer-events: auto !important;
+  margin-top: 14px !important;
+  padding: 8px 16px !important;
+  background: rgba(15, 23, 42, 0.94) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1.5px solid rgba(204, 255, 0, 0.3) !important;
+  border-radius: 100px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(204, 255, 0, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #ffffff !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+}
+
+.screenshot-ext-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.2px !important;
+  color: #ffffff !important;
+  padding-left: 4px !important;
+  padding-right: 8px !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.screenshot-ext-brand-icon {
+  font-size: 17px !important;
+  line-height: 1 !important;
+}
+
+.screenshot-ext-brand-text {
+  color: #ccff00 !important;
+  font-weight: 800 !important;
+}
+
+.screenshot-ext-btn-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* Botones principales de acción */
+.screenshot-ext-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 18px !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Botón: Pantalla completa */
+.screenshot-ext-btn-full {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.screenshot-ext-btn-full:hover {
+  background: #334155 !important;
+  border-color: #ccff00 !important;
+  color: #ccff00 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(204, 255, 0, 0.25) !important;
+}
+
+.screenshot-ext-btn-full:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Botón: Captura personalizada con el color #ccff00 */
+.screenshot-ext-btn-custom {
+  background: linear-gradient(135deg, #ccff00 0%, #b3e600 100%) !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 14px rgba(204, 255, 0, 0.45) !important;
+}
+
+.screenshot-ext-btn-custom:hover {
+  background: linear-gradient(135deg, #d8ff33 0%, #ccff00 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(204, 255, 0, 0.65) !important;
+}
+
+.screenshot-ext-btn-custom:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 2px 6px rgba(204, 255, 0, 0.3) !important;
+}
+
+/* Botón de cerrar (✕) */
+.screenshot-ext-btn-close {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 50% !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin-left: 2px !important;
+  transition: all 0.15s ease !important;
+}
+
+.screenshot-ext-btn-close:hover {
+  background: rgba(239, 68, 68, 0.25) !important;
+  color: #fca5a5 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+/* ==========================================================================
+   Overlay y Selector de Área con color #ccff00 y Cursor 👈🏻
+   ========================================================================== */
+#screenshot-ext-area-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 2147483646 !important;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' style='font-size:26px;'><text x='0' y='26'>👈🏻</text></svg>") 0 14, crosshair !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  touch-action: none !important;
+}
+
+/* Puntero flotante con emoji 👈🏻 */
+#screenshot-ext-custom-pointer {
+  position: fixed !important;
+  pointer-events: none !important;
+  z-index: 2147483647 !important;
+  font-size: 34px !important;
+  line-height: 1 !important;
+  transform: translate(-4px, -12px) !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 6px rgba(204, 255, 0, 0.6)) !important;
+  transition: opacity 0.1s ease !important;
+}
+
+/* Caja de Selección resaltada con el color deseado #ccff00 */
+#screenshot-ext-selection-box {
+  position: fixed !important;
+  border: 2.5px solid #ccff00 !important;
+  background: rgba(204, 255, 0, 0.14) !important;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.6), 0 0 25px rgba(204, 255, 0, 0.5) !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+  z-index: 2147483647 !important;
+  display: none;
+}
+
+/* Esquinas de agarre visual de la selección */
+.screenshot-ext-handle {
+  position: absolute !important;
+  width: 8px !important;
+  height: 8px !important;
+  background: #ccff00 !important;
+  border: 1.5px solid #0f172a !important;
+  border-radius: 2px !important;
+}
+.screenshot-ext-handle-tl { top: -4px !important; left: -4px !important; }
+.screenshot-ext-handle-tr { top: -4px !important; right: -4px !important; }
+.screenshot-ext-handle-bl { bottom: -4px !important; left: -4px !important; }
+.screenshot-ext-handle-br { bottom: -4px !important; right: -4px !important; }
+
+/* Etiqueta con las dimensiones en píxeles */
+#screenshot-ext-dimension-badge {
+  position: absolute !important;
+  bottom: -32px !important;
+  left: 0 !important;
+  background: #0f172a !important;
+  color: #ccff00 !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  border: 1.5px solid #ccff00 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(204, 255, 0, 0.25) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+/* Banner de ayuda mientras seleccionas área */
+#screenshot-ext-hint-badge {
+  position: fixed !important;
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #ffffff !important;
+  padding: 8px 20px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(204, 255, 0, 0.4) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(204, 255, 0, 0.2) !important;
+  pointer-events: none !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+#screenshot-ext-hint-badge b {
+  color: #ccff00 !important;
+}
+
+/* ==========================================================================
+   Toast Notifications con indicador de progreso
+   ========================================================================== */
+#screenshot-ext-toast {
+  position: fixed !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  padding: 12px 22px !important;
+  background: rgba(15, 23, 42, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(204, 255, 0, 0.35) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(204, 255, 0, 0.2) !important;
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  z-index: 2147483647 !important;
+  animation: screenshot-ext-toast-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  box-sizing: border-box !important;
+}
+
+@keyframes screenshot-ext-toast-in {
+  from {
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.screenshot-ext-toast-icon {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.screenshot-ext-spinner {
+  width: 16px !important;
+  height: 16px !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-top-color: #ccff00 !important;
+  border-radius: 50% !important;
+  animation: screenshot-ext-spin 0.65s linear infinite !important;
+}
+
+@keyframes screenshot-ext-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
