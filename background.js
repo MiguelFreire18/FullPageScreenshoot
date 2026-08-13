@@ -1,14 +1,15 @@
 // Background Service Worker - Manifest V3
 
 chrome.action.onClicked.addListener(async (tab) => {
-  if (!tab.id) return;
+  if (!tab.id || !tab.url) return;
   
-  const isRestrictedUrl = tab.url && (
+  const isRestrictedUrl = (
     tab.url.startsWith('chrome://') ||
     tab.url.startsWith('brave://') ||
     tab.url.startsWith('edge://') ||
     tab.url.startsWith('about:') ||
-    tab.url.startsWith('chrome-extension://')
+    tab.url.startsWith('chrome-extension://') ||
+    tab.url.startsWith('view-source:')
   );
 
   if (isRestrictedUrl) {
@@ -16,9 +17,12 @@ chrome.action.onClicked.addListener(async (tab) => {
     return;
   }
 
+  // Intentar comunicar con el content script existente
   try {
-    await chrome.tabs.sendMessage(tab.id, { action: 'TOGGLE_BANNER' });
+    const res = await chrome.tabs.sendMessage(tab.id, { action: 'TOGGLE_BANNER' });
+    if (res && res.status === 'ok') return;
   } catch (error) {
+    // Si la pestaña estaba abierta antes de instalar/recargar la extensión, inyectamos los scripts de inmediato
     try {
       await chrome.scripting.insertCSS({
         target: { tabId: tab.id },
@@ -28,15 +32,10 @@ chrome.action.onClicked.addListener(async (tab) => {
         target: { tabId: tab.id },
         files: ['content.js']
       });
-      setTimeout(async () => {
-        try {
-          await chrome.tabs.sendMessage(tab.id, { action: 'TOGGLE_BANNER' });
-        } catch (e) {
-          console.error('Error al abrir banner:', e);
-        }
-      }, 120);
+      // Enviar el mensaje inmediatamente una vez inyectado
+      await chrome.tabs.sendMessage(tab.id, { action: 'TOGGLE_BANNER' });
     } catch (injectError) {
-      console.error('Error al inyectar scripts:', injectError);
+      console.error('Error al inyectar scripts en la pestaña:', injectError);
     }
   }
 });

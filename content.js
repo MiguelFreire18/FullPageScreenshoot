@@ -1,10 +1,14 @@
 // Content Script - Extensión de Capturas de Pantalla para Brave & Chrome (Windows / Mac)
 
 (function () {
-  if (window.__SCREENSHOT_EXT_INITIALIZED__) return;
-  window.__SCREENSHOT_EXT_INITIALIZED__ = true;
+  // Limpiar cualquier residuo de instancias previas (por recargas de la extensión)
+  const oldBanner = document.getElementById('screenshot-ext-banner-root');
+  if (oldBanner) oldBanner.remove();
+  const oldOverlay = document.getElementById('screenshot-ext-area-overlay');
+  if (oldOverlay) oldOverlay.remove();
+  const oldToast = document.getElementById('screenshot-ext-toast');
+  if (oldToast) oldToast.remove();
 
-  let bannerElement = null;
   let isCapturing = false;
 
   // Escuchar mensajes del Service Worker (clic en icono 📸)
@@ -17,7 +21,8 @@
   });
 
   function toggleBanner() {
-    if (bannerElement) {
+    const existing = document.getElementById('screenshot-ext-banner-root');
+    if (existing) {
       removeBanner(false);
     } else {
       createBanner();
@@ -25,28 +30,28 @@
   }
 
   function removeBanner(immediate = false) {
+    const bannerElement = document.getElementById('screenshot-ext-banner-root');
     if (!bannerElement) return;
 
     if (immediate) {
       if (bannerElement.parentNode) {
         bannerElement.parentNode.removeChild(bannerElement);
       }
-      bannerElement = null;
     } else {
       bannerElement.style.animation = 'screenshot-ext-fade-out 0.15s forwards';
       setTimeout(() => {
-        if (bannerElement && bannerElement.parentNode) {
-          bannerElement.parentNode.removeChild(bannerElement);
+        const el = document.getElementById('screenshot-ext-banner-root');
+        if (el && el.parentNode) {
+          el.parentNode.removeChild(el);
         }
-        bannerElement = null;
       }, 150);
     }
   }
 
   function createBanner() {
-    if (bannerElement || isCapturing) return;
+    if (document.getElementById('screenshot-ext-banner-root') || isCapturing) return;
 
-    bannerElement = document.createElement('div');
+    const bannerElement = document.createElement('div');
     bannerElement.id = 'screenshot-ext-banner-root';
     bannerElement.innerHTML = `
       <div class="screenshot-ext-banner-bar">
