@@ -12,30 +12,6 @@
 
 ---
 
-## 🌟 Características Principales
-
-- 📸 **Activación Instantánea**: Haz clic en el icono de la cámara en la barra de extensiones para desplegar un banner superior moderno con efecto *Glassmorphism*.
-- 📜 **Pantalla Completa (Multi-Captura y Ensamblado en Canvas)**:
-  - Divide la web en secciones verticales secuenciales.
-  - Recorre la página automáticamente esperando el renderizado de cada segmento.
-  - Oculta encabezados fijos flotantes en los fotogramas secundarios para evitar que se repitan.
-  - Ensambla todas las partes en un lienzo Canvas de alta resolución respetando la densidad de píxeles (`devicePixelRatio` / Retina / 4K).
-- 👈🏻 **Captura Personalizada (Área a Medida con acento #ccff00)**:
-  - Transforma el puntero en el emoji `👈🏻`.
-  - Permite hacer clic y arrastrar para seleccionar exactamente la región deseada con resplandor neón **#ccff00**.
-  - Muestra un indicador en tiempo real con las dimensiones en píxeles (`Ancho × Alto px`).
-  - Al soltar el clic, realiza el recorte automático.
-- 💾 **Descarga Inteligente con Nomenclatura Automática**:
-  - Guarda los archivos PNG directamente en tu carpeta de `Descargas` sin cuadros de diálogo.
-  - Formato del nombre de archivo: **URL limpia (sin `https://`, sin `www`, sin `.com`/`.es`) + Fecha y Hora**.
-  - *Ejemplos*:
-    - `https://www.linkedin.com/authwall` ➔ `linkedin_authwall_2026-08-13_23-45-10.png`
-    - `https://github.com/trending` ➔ `github_trending_2026-08-13_23-45-10.png`
-    - `https://www.marca.com/` ➔ `marca_2026-08-13_23-45-10.png`
-- 💻 **100% Multiplataforma**: Funciona idénticamente en **Windows**, **macOS** y **Linux** dentro de los navegadores **Brave** y **Google Chrome**.
-
----
-
 ## 📖 ¿Cómo Funciona?
 
 1. **Abrir el Menú de Captura**:
@@ -54,33 +30,6 @@
    - El cursor cambiará al emoji `👈🏻`.
    - Haz clic con el botón izquierdo y arrastra para dibujar el recuadro con el color neón `#ccff00`.
    - Suelta el ratón: el recorte se procesará al instante y se guardará en `Descargas`.
-
----
-
-## 📁 Estructura del Proyecto
-
-```
-extensiones/
-├── manifest.json         # Configuración y permisos (Manifest V3)
-├── background.js         # Service Worker (capturas de viewport y descarga automática)
-├── content.js            # Lógica: banner, multi-captura, unión en Canvas y nombres con URL limpia
-├── content.css           # Estilos de interfaz, cursor 👈🏻, tema #ccff00 y notificaciones
-├── icons/                # Iconos de la extensión en diferentes resoluciones
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-├── generate_icons.py     # Script generador de los iconos PNG 📸 con acento #ccff00
-└── README.md             # Documentación del proyecto para GitHub
-```
-
----
-
-## 🔒 Permisos y Privacidad
-
-- `activeTab`: Acceso temporal a la pestaña activa únicamente cuando pulsas la extensión.
-- `scripting`: Permite mostrar la barra superior interactiva y el selector visual.
-- `downloads`: Permite guardar las capturas generadas directamente en tu carpeta de descargas local.
-- **100% Local**: Todo el procesamiento gráfico se realiza localmente en tu navegador mediante Canvas. Ningún dato ni imagen sale de tu equipo.
 
 ---
 
@@ -106,30 +55,6 @@ Desarrollado por **Miguel Freire**
 
 ---
 
-## 🌟 Key Features
-
-- 📸 **Instant Activation**: Click the camera icon in your extensions toolbar to unveil a modern top banner with a *Glassmorphism* blur effect.
-- 📜 **Full Page Capture (Multi-Capture & Canvas Stitching)**:
-  - Splits the webpage into sequential vertical segments.
-  - Automatically scrolls through the page, allowing each section time to render properly.
-  - Hides sticky/fixed headers during secondary frames to prevent duplication.
-  - Stitches all parts onto a high-resolution HTML5 Canvas, respecting screen pixel density (`devicePixelRatio` / Retina / 4K).
-- 👈🏻 **Custom Region Capture (Tailored Selection with #ccff00 Accent)**:
-  - Changes the cursor into the `👈🏻` emoji.
-  - Click and drag to select the exact screen area with a **#ccff00** neon glow outline.
-  - Displays real-time pixel dimensions (`Width × Height px`).
-  - Automatically crops and downloads the selection upon mouse release.
-- 💾 **Smart Download & Automated Naming**:
-  - Saves PNG files directly into your local `Downloads` folder without prompt dialogs.
-  - Filename format: **Cleaned URL (stripping `https://`, `www`, and TLDs like `.com`/`.es`) + Date & Time**.
-  - *Examples*:
-    - `https://www.linkedin.com/authwall` ➔ `linkedin_authwall_2026-08-13_23-45-10.png`
-    - `https://github.com/trending` ➔ `github_trending_2026-08-13_23-45-10.png`
-    - `https://www.marca.com/` ➔ `marca_2026-08-13_23-45-10.png`
-- 💻 **100% Cross-Platform**: Functions identically on **Windows**, **macOS**, and **Linux** within **Brave** and **Google Chrome** browsers.
-
----
-
 ## 📖 How It Works
 
 1. **Open the Capture Toolbar**:
@@ -148,33 +73,6 @@ Desarrollado por **Miguel Freire**
    - Cursor switches to `👈🏻`.
    - Left-click and drag to select the desired area marked by `#ccff00` neon highlights.
    - Release mouse: cropped image is processed instantly and saved to `Downloads`.
-
----
-
-## 📁 Project Structure
-
-```
-extensiones/
-├── manifest.json         # Extension configuration & permissions (Manifest V3)
-├── background.js         # Service Worker (viewport captures & automated downloads)
-├── content.js            # Core logic: UI banner, multi-capture, Canvas stitching & URL cleaning
-├── content.css           # UI styles, custom cursor 👈🏻, #ccff00 theme & toast notifications
-├── icons/                # Extension icons in multiple resolutions
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-├── generate_icons.py     # Python script to generate PNG icons 📸 with #ccff00 accent
-└── README.md             # Project documentation for GitHub
-```
-
----
-
-## 🔒 Permissions & Privacy
-
-- `activeTab`: Grants temporary access to the active tab only when clicking the extension icon.
-- `scripting`: Enables injecting the interactive top banner and area selection overlay.
-- `downloads`: Allows saving generated screenshots directly into your local downloads directory.
-- **100% Local**: Image rendering and canvas manipulation happen entirely inside your browser. No data or images are ever transmitted externally.
 
 ---
 
