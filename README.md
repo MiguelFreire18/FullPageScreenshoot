@@ -36,26 +36,6 @@
 
 ---
 
-## 🚀 Instalación Paso a Paso (Modo Desarrollador)
-
-No requiere instalación de dependencias ni compiladores:
-
-### En Brave Browser:
-1. Abre Brave y escribe en la barra de direcciones: `brave://extensions` (o accede desde el Menú -> *Extensiones*).
-2. Activa la casilla **"Modo de desarrollador"** (esquina superior derecha).
-3. Haz clic en el botón **"Cargar descomprimida"** (o *Load unpacked*).
-4. Selecciona la carpeta donde descargaste este proyecto.
-5. ¡Listo! Para tenerla siempre a mano, pulsa el icono de la pieza de puzzle 🧩 en la barra de Brave y fija el icono 📸.
-
-### En Google Chrome:
-1. Abre Chrome y escribe en la barra de direcciones: `chrome://extensions`.
-2. Activa el interruptor **"Modo de desarrollador"** en la esquina superior derecha.
-3. Haz clic en **"Cargar descomprimida"**.
-4. Selecciona la carpeta del proyecto.
-5. Fija el icono 📸 en la barra de herramientas para acceder en 1 clic.
-
----
-
 ## 📖 ¿Cómo Funciona?
 
 1. **Abrir el Menú de Captura**:
@@ -107,4 +87,98 @@ extensiones/
 ## 👤 Autor
 
 Desarrollado por **Miguel Freire**  
+🔗 [LinkedIn: miguelangelhfreire](https://www.linkedin.com/in/miguelangelhfreire)
+
+---
+---
+
+# 📸 Page Screenshot - Extension for Brave & Google Chrome
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Miguel_Freire-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/miguelangelhfreire)
+![Brave](https://img.shields.io/badge/Brave-Compatible-FB542B?style=for-the-badge&logo=brave&logoColor=white)
+![Google Chrome](https://img.shields.io/badge/Google_Chrome-Compatible-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
+![Windows & Mac](https://img.shields.io/badge/OS-Windows%20|%20macOS%20|%20Linux-333333?style=for-the-badge)
+![Manifest V3](https://img.shields.io/badge/Manifest-V3-success?style=for-the-badge)
+
+> Lightweight, modern, and powerful browser extension built using the **Manifest V3** standard. Take full-page screenshots (with automated scrolling and stitching) or custom area screenshots using an interactive 👈🏻 pointer and **#ccff00** neon accent color. Automatically saves everything to your **Downloads** folder using clean **URL + Timestamp** filenames.
+
+🔗 **Connect with me on LinkedIn**: [https://www.linkedin.com/in/miguelangelhfreire](https://www.linkedin.com/in/miguelangelhfreire)
+
+---
+
+## 🌟 Key Features
+
+- 📸 **Instant Activation**: Click the camera icon in your extensions toolbar to unveil a modern top banner with a *Glassmorphism* blur effect.
+- 📜 **Full Page Capture (Multi-Capture & Canvas Stitching)**:
+  - Splits the webpage into sequential vertical segments.
+  - Automatically scrolls through the page, allowing each section time to render properly.
+  - Hides sticky/fixed headers during secondary frames to prevent duplication.
+  - Stitches all parts onto a high-resolution HTML5 Canvas, respecting screen pixel density (`devicePixelRatio` / Retina / 4K).
+- 👈🏻 **Custom Region Capture (Tailored Selection with #ccff00 Accent)**:
+  - Changes the cursor into the `👈🏻` emoji.
+  - Click and drag to select the exact screen area with a **#ccff00** neon glow outline.
+  - Displays real-time pixel dimensions (`Width × Height px`).
+  - Automatically crops and downloads the selection upon mouse release.
+- 💾 **Smart Download & Automated Naming**:
+  - Saves PNG files directly into your local `Downloads` folder without prompt dialogs.
+  - Filename format: **Cleaned URL (stripping `https://`, `www`, and TLDs like `.com`/`.es`) + Date & Time**.
+  - *Examples*:
+    - `https://www.linkedin.com/authwall` ➔ `linkedin_authwall_2026-08-13_23-45-10.png`
+    - `https://github.com/trending` ➔ `github_trending_2026-08-13_23-45-10.png`
+    - `https://www.marca.com/` ➔ `marca_2026-08-13_23-45-10.png`
+- 💻 **100% Cross-Platform**: Functions identically on **Windows**, **macOS**, and **Linux** within **Brave** and **Google Chrome** browsers.
+
+---
+
+## 📖 How It Works
+
+1. **Open the Capture Toolbar**:
+   - Navigate to any website.
+   - Click the extension icon 📸.
+   - The top banner will appear with 2 main options:
+     - 📜 **Full Page**
+     - 👈🏻 **Custom Capture**
+
+2. **Take a Full Page Screenshot**:
+   - Click **"Full Page"**.
+   - The extension scrolls down in blocks, stitches the canvas image, and automatically downloads the completed capture.
+
+3. **Capture a Specific Area**:
+   - Click **"Custom Capture"**.
+   - Cursor switches to `👈🏻`.
+   - Left-click and drag to select the desired area marked by `#ccff00` neon highlights.
+   - Release mouse: cropped image is processed instantly and saved to `Downloads`.
+
+---
+
+## 📁 Project Structure
+
+```
+extensiones/
+├── manifest.json         # Extension configuration & permissions (Manifest V3)
+├── background.js         # Service Worker (viewport captures & automated downloads)
+├── content.js            # Core logic: UI banner, multi-capture, Canvas stitching & URL cleaning
+├── content.css           # UI styles, custom cursor 👈🏻, #ccff00 theme & toast notifications
+├── icons/                # Extension icons in multiple resolutions
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+├── generate_icons.py     # Python script to generate PNG icons 📸 with #ccff00 accent
+└── README.md             # Project documentation for GitHub
+```
+
+---
+
+## 🔒 Permissions & Privacy
+
+- `activeTab`: Grants temporary access to the active tab only when clicking the extension icon.
+- `scripting`: Enables injecting the interactive top banner and area selection overlay.
+- `downloads`: Allows saving generated screenshots directly into your local downloads directory.
+- **100% Local**: Image rendering and canvas manipulation happen entirely inside your browser. No data or images are ever transmitted externally.
+
+---
+
+## 👤 Author
+
+Developed by **Miguel Freire**  
 🔗 [LinkedIn: miguelangelhfreire](https://www.linkedin.com/in/miguelangelhfreire)
